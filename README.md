@@ -112,7 +112,7 @@ bestCenter를 velocityHistory에 저장합니다.
 
 https://github.com/vinpple/Line_Tracer/blob/4b5e9b3bd4b9849d93af1aa2a2006e142f93477b/main.cpp#L145-L160
 
-모터 속도 조
+모터 속도 조절절
 
 
 
