@@ -34,7 +34,7 @@ int main() {
         return -1;
     }
 
-    string src = ""nvarguscamerasrc sensor-id=0 ! \
+    string src = "nvarguscamerasrc sensor-id=0 ! \
 video/x-raw(memory:NVMM), width=(int)640, height=(int)360, \
 format=(string)NV12, framerate=(fraction)30/1 ! \
 nvvidconv flip-method=0 ! video/x-raw, \
