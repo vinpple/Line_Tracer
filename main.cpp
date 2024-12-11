@@ -34,9 +34,14 @@ int main() {
         return -1;
     }
 
-    string src = "/home/jetson/workspace/LineTracer/simulation/5_lt_cw_100rpm_out.mp4";
+    string src = ""nvarguscamerasrc sensor-id=0 ! \
+video/x-raw(memory:NVMM), width=(int)640, height=(int)360, \
+format=(string)NV12, framerate=(fraction)30/1 ! \
+nvvidconv flip-method=0 ! video/x-raw, \
+width=(int)640, height=(int)360, format=(string)BGRx ! \
+videoconvert ! video/x-raw, format=(string)BGR ! appsink";
 
-    VideoCapture source(src, CAP_FFMPEG);
+    VideoCapture source(src,  CAP_GSTREAMER);
     if (!source.isOpened()) {
         cerr << "Camera error" << endl;
         return -1;
